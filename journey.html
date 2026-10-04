@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The next chapter of Two Worlds, One Journey.">
+  <title>Two Worlds, One Journey | My Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="brand-mark">TW</span><span>Two Worlds<span class="brand-dot">.</span></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="roots.html">My Roots</a></li>
+          <li class="nav-item"><a class="nav-link active" href="journey.html">My Journey</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="#message">Leave a message</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero journey-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Chapter 03 · The next chapter</p>
+          <h1>My <em>journey.</em></h1>
+          <p>Today, the story continues in Kazakhstan. University, new friendships and new challenges are turning distance into growth.</p>
+        </div>
+        <div class="chapter-stamp stamp-kz"><span>02</span><small>NEW<br>HORIZON</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="journey-map">
+        <div class="map-node node-start"><span>01</span><strong>Roots</strong><small>Afghanistan</small></div>
+        <div class="map-connector"><i></i><span>THE BRIDGE</span></div>
+        <div class="map-node node-now"><span>02</span><strong>Now</strong><small>Kazakhstan</small></div>
+        <div class="map-connector"><i></i><span>THE FUTURE</span></div>
+        <div class="map-node node-next"><span>03</span><strong>Next</strong><small>Still unfolding</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="life-section section-pad">
+    <div class="container">
+      <div class="section-heading compact-heading">
+        <p class="eyebrow">Life in a new place</p>
+        <h2>Learning happens outside the classroom too.</h2>
+      </div>
+      <div class="life-grid">
+        <article class="life-card life-main"><div class="life-number">01</div><h3>Student life</h3><p>Studying Computer Science has made the journey feel active: every project, problem and new concept becomes another step forward.</p><div class="life-tag">BUILD · LEARN · REPEAT</div></article>
+        <article class="life-card"><div class="life-number">02</div><h3>New perspectives</h3><p>Living in a different country means constantly learning how people communicate, work and see the world.</p></article>
+        <article class="life-card"><div class="life-number">03</div><h3>Looking ahead</h3><p>The goal is simple: keep learning, create useful things and build a future that connects both worlds.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="message-section section-pad" id="message">
+    <div class="container">
+      <div class="message-grid">
+        <div class="message-copy">
+          <p class="eyebrow">Leave a trace</p>
+          <h2>Every journey is better with a conversation.</h2>
+          <p>If this story made you curious about either world, send a message. This form is a small interactive part of the journey.</p>
+        </div>
+        <form class="message-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="form-row">
+            <label for="topic">What caught your attention?</label>
+            <select id="topic" name="topic" required>
+              <option value="" selected disabled>Choose one</option>
+              <option>Afghan culture</option>
+              <option>Bamyan</option>
+              <option>Student life</option>
+              <option>The journey itself</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message-text">Your message</label>
+            <textarea id="message-text" name="message" rows="4" placeholder="Write something..." required></textarea>
+          </div>
+          <button class="btn btn-primary-custom" type="submit">Send message <span>→</span></button>
+          <p class="form-note">Demo form — no data is submitted to a server.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">TW</span><span>Two Worlds<span class="brand-dot">.</span></span></a><p>A small story about roots, movement and becoming.</p></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="roots.html">My Roots</a></div>
+    <small>© 2026 Two Worlds, One Journey</small>
+  </div>
+</footer>
+</body>
+</html>
