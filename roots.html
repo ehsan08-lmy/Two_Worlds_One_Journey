@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>try{var t=localStorage.getItem("twTheme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183a35">
+  <meta name="description" content="Two Worlds, One Journey — a personal visual story connecting Afghan roots with student life in Kazakhstan.">
+  <title>The places | Two Worlds, One Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fx.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/fieldbook.css">
+  <link rel="stylesheet" href="css/refinement.css">
+</head>
+<body data-page="roots">
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg site-nav" aria-label="Main navigation">
+    <div class="container nav-shell">
+      <a class="navbar-brand brand-lockup" href="index.html" aria-label="Two Worlds, One Journey home">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span></span>
+        <span class="brand-words"><strong>Two Worlds</strong><small>ONE JOURNEY</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="primaryNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link " href="index.html" >The story</a></li>
+          <li class="nav-item"><a class="nav-link is-current" href="roots.html" aria-current="page">The places</a></li>
+          <li class="nav-item"><a class="nav-link " href="journey.html" >My journey</a></li>
+          <li class="nav-item route-nav-item"><a class="nav-link route-nav-link" href="journey.html#route-builder">My route <span class="route-count" id="routeCount" aria-label="Saved places">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section class="page-hero page-hero--places">
+    <div class="container page-hero-grid"><div class="page-hero-copy" data-reveal><div class="eyebrow"><span class="eyebrow-line"></span> THE PLACE ATLAS <span class="eyebrow-year">02 / 03</span></div><h1>Places that<br><em>stay with us.</em></h1><p>Some places become part of your memory. Others become part of your everyday life. This atlas brings both worlds into one frame.</p><a class="button button-dark" href="#explorer">Explore the atlas <span>↓</span></a></div>
+      <div class="page-hero-collage" data-reveal>
+        <figure class="collage-image collage-image--one photo-open" data-photo="https://commons.wikimedia.org/wiki/Special:FilePath/Band_Amir.jpg?width=1280" data-caption="Band-e-Amir Lakes, Bamiyan · Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Band_Amir.jpg?width=1280" alt="Band-e-Amir Lake in Bamiyan with the lake reflecting the surrounding cliffs" loading="lazy"><figcaption>BAND-E-AMIR · AFGHANISTAN</figcaption></figure>
+        <figure class="collage-image collage-image--two photo-open" data-photo="https://commons.wikimedia.org/wiki/Special:FilePath/Baiterek.jpg?width=960" data-caption="Baiterek Monument, Astana · Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baiterek.jpg?width=960" alt="Baiterek Monument in Astana against the blue sky" loading="lazy"><figcaption>BAITEREK · KAZAKHSTAN</figcaption></figure>
+        <span class="collage-sticker">A MAP<br>OF MEMORY</span>
+      </div></div>
+  </section>
+
+  <section class="atlas-intro section-pad"><div class="container atlas-intro-grid"><div class="section-kicker" data-reveal><span>02</span><span>THE ATLAS</span></div><div data-reveal><p class="micro-label">Look closer</p><h2>Real places. Real <em>stories.</em></h2><p class="intro-text">Search by name, explore by country or save the places you would like to discover. Every photograph is a real image of the named location or cultural subject, with its source credited below.</p></div><div class="atlas-total" data-reveal><strong id="atlasTotal">13</strong><span>PLACES<br>TO EXPLORE</span></div></div></section>
+
+  <section class="explorer-section section-pad" id="explorer">
+    <div class="container">
+      <div class="explorer-head" data-reveal><div><p class="micro-label">The interactive collection</p><h2>Find your <em>next stop.</em></h2></div><p class="explorer-caption">Use the filters to move between the two worlds. Save a place to your route and it will stay there as you explore.</p></div>
+      <div class="explorer-controls" data-reveal>
+        <label class="search-wrap" for="placeSearch"><span aria-hidden="true">⌕</span><input id="placeSearch" type="search" placeholder="Search a place, city or story…" autocomplete="off"><kbd>Ctrl K</kbd></label>
+        <div class="filter-group" role="group" aria-label="Filter places by country"><button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All places</button><button type="button" class="filter-chip" data-filter="Afghanistan" aria-pressed="false">Afghanistan</button><button type="button" class="filter-chip" data-filter="Kazakhstan" aria-pressed="false">Kazakhstan</button></div>
+        <label class="sort-wrap" for="placeSort"><span>Sort</span><select id="placeSort"><option value="featured">Curated order</option><option value="az">Name A–Z</option><option value="country">Country</option><option value="duration">Time to explore</option></select></label>
+        <div class="category-tools"><span class="category-tools-label">LOOK THROUGH</span><div class="category-group" role="group" aria-label="Filter by type"><button type="button" class="category-chip is-active" data-category="all" aria-pressed="true">Everything</button><button type="button" class="category-chip" data-category="Heritage" aria-pressed="false">Heritage</button><button type="button" class="category-chip" data-category="Architecture" aria-pressed="false">Architecture</button><button type="button" class="category-chip" data-category="Nature & place" aria-pressed="false">Nature</button><button type="button" class="category-chip" data-category="Culture" aria-pressed="false">Culture</button><button type="button" class="category-chip" data-category="City life" aria-pressed="false">City life</button></div><button type="button" class="saved-only" id="savedOnly" aria-pressed="false">◎ My saved places <span id="savedOnlyCount">0</span></button></div>
+      </div>
+      <div class="results-line"><span id="resultsCount">10 places</span><span>REAL LOCATIONS · DOCUMENTED IMAGES · 02 COUNTRIES</span></div>
+      <div class="place-grid" id="placeGrid" aria-live="polite"><p class="loading-note">Loading the place atlas…</p></div>
+      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No places found.</h3><p>Try another name or clear the country filter.</p><button type="button" class="text-button" id="resetFilters">Reset filters ↗</button></div>
+    </div>
+  </section>
+
+  <section class="object-studies section-pad" aria-labelledby="objectStudiesTitle">
+    <div class="container">
+      <div class="object-heading" data-reveal><div><p class="micro-label">Beyond the skyline</p><h2 id="objectStudiesTitle">Culture lives in the <em>details.</em></h2></div><p>Not every landmark is a building. A woven pattern, a musical instrument or the inside of a traditional home can carry a whole world of meaning.</p></div>
+      <div class="object-grid">
+        <figure class="object-card object-card--wide photo-open" data-reveal data-photo="https://commons.wikimedia.org/wiki/Special:FilePath/Herat_Carpet_-_Google_Art_Project.jpg?width=1280" data-caption="Herat Carpet, silk, wool and cotton, Al-Sabah Collection · Wikimedia Commons / Public Domain Mark 1.0">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Herat_Carpet_-_Google_Art_Project.jpg?width=1280" alt="Historic Herat carpet with detailed repeating woven patterns" loading="lazy">
+          <figcaption><span>AFGHANISTAN · TEXTILE MEMORY</span><strong>A pattern with a history.</strong><small>Herat carpet · historical textile</small></figcaption>
+          <span class="object-index">OBJECT STUDY / 01</span>
+        </figure>
+        <figure class="object-card photo-open" data-reveal data-photo="https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Yurt_With_Traditional_Kazakh_Musical_Instruments_%287508130466%29.jpg?width=1280" data-caption="Traditional Kazakh yurt and musical instruments · Ken and Nyetta / Wikimedia Commons, CC BY 2.0">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Yurt_With_Traditional_Kazakh_Musical_Instruments_%287508130466%29.jpg?width=1280" alt="Interior of a traditional Kazakh yurt with patterned felt, furnishings and musical instruments" loading="lazy">
+          <figcaption><span>KAZAKHSTAN · HOME & CRAFT</span><strong>A home made to travel.</strong><small>Traditional yurt interior</small></figcaption>
+          <span class="object-index">OBJECT STUDY / 02</span>
+        </figure>
+        <figure class="object-card photo-open" data-reveal data-photo="https://commons.wikimedia.org/wiki/Special:FilePath/Kazakh_Dombra.jpg?width=960" data-caption="Kazakh Dombra · Mizu basyo / Wikimedia Commons, CC BY-SA 3.0">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kazakh_Dombra.jpg?width=960" alt="A traditional Kazakh dombra, a long-necked two-stringed instrument" loading="lazy">
+          <figcaption><span>KAZAKHSTAN · SOUND & IDENTITY</span><strong>Two strings. Many stories.</strong><small>Dombra · traditional instrument</small></figcaption>
+          <span class="object-index">OBJECT STUDY / 03</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-strip-section"><div class="photo-strip photo-strip--roots"><div class="photo-strip-caption"><span>THE DETAILS MATTER</span><strong>Culture is in the small things.</strong></div></div></section>
+
+  <section class="credits-section section-pad" id="photo-credits"><div class="container credits-layout"><div data-reveal><p class="micro-label">Image transparency</p><h2>Every photo has<br>a <em>source.</em></h2><p class="credits-note">Photographs are sourced from Wikimedia Commons. Click a credit to view the original file page, author information and license. Images are displayed with their original context and are not presented as personal photographs.</p></div>
+    <div class="credits-list" data-reveal>
+      <details><summary>Afghanistan photographs <span>＋</span></summary><ul><li><a href="https://commons.wikimedia.org/wiki/File:Bamyan.jpg" target="_blank" rel="noopener">Bamiyan Valley / Buddha niche</a> — Monikajoannah, CC BY-SA 4.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Band_Amir.jpg" target="_blank" rel="noopener">Band-e-Amir Lake</a> — AfghanistanMatters / photo by Nasim Fekrat, CC BY 2.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Darul_Aman_Palace_in_Kabul.jpg" target="_blank" rel="noopener">Darul Aman Palace</a> — Ninaras, CC BY 4.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:HeratCitadel.jpg" target="_blank" rel="noopener">Herat Citadel</a> — Artacoana, public domain.</li><li><a href="https://commons.wikimedia.org/wiki/File:Blue_Mosque_in_Mazar-e-Sharif.jpg" target="_blank" rel="noopener">Blue Mosque, Mazar-e-Sharif</a> — ISAF Headquarters Public Affairs Office, CC BY 2.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Minaret_Jam_ghor_Afghanistan.jpg" target="_blank" rel="noopener">Minaret of Jam, Ghor</a> — AhmadElhan, CC BY-SA 4.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Herat_Carpet_-_Google_Art_Project.jpg" target="_blank" rel="noopener">Herat Carpet, Al-Sabah Collection</a> — Google Art Project; Public Domain Mark 1.0.</li></ul></details>
+      <details><summary>Kazakhstan photographs <span>＋</span></summary><ul><li><a href="https://commons.wikimedia.org/wiki/File:Baiterek.jpg" target="_blank" rel="noopener">Baiterek Monument</a> — אמר מר, CC BY-SA 4.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Khan_Shatyr.jpg" target="_blank" rel="noopener">Khan Shatyr</a> — Quarot, CC0 1.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Mosque_astana.jpg" target="_blank" rel="noopener">Astana mosque at sunset</a> — Mukhammed.kenzhebek, CC BY-SA 4.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Traditional_Yurt_With_Traditional_Kazakh_Musical_Instruments_(7508130466).jpg" target="_blank" rel="noopener">Kazakh yurt and instruments</a> — Ken and Nyetta, CC BY 2.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Astana,_view.jpg" target="_blank" rel="noopener">Astana from Nur Alem</a> — Nikolamikovic82, CC0 1.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Zenkov_Cathedral,_Almaty.jpg" target="_blank" rel="noopener">Ascension (Zenkov) Cathedral, Almaty</a> — Bgag, CC0 1.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Charyn_Canyon,_Kazakhstan_01.jpg" target="_blank" rel="noopener">Charyn Canyon</a> — Bgag, CC0 1.0.</li><li><a href="https://commons.wikimedia.org/wiki/File:Kazakh_Dombra.jpg" target="_blank" rel="noopener">Kazakh Dombra</a> — Mizu basyo, CC BY-SA 3.0.</li></ul></details>
+      <div class="credits-tools"><p><strong>Libraries and creative assistance</strong></p><p>Bootstrap 5.3.3 provides responsive navigation and form components. jQuery 3.7.1 powers the accordion, lightbox transitions, smooth in-page scrolling and form feedback. Playfair Display and DM Sans are loaded from Google Fonts. The route map on the Journey page uses Leaflet 1.9.4 with map tiles and data from OpenStreetMap contributors (© OpenStreetMap, ODbL); pin positions are approximate. OpenAI ChatGPT was used as a coding and documentation assistant; the project was adapted and reviewed for this assignment by the student.</p></div>
+    </div></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html">Two Worlds<span>, One Journey.</span></a>
+      <p>A personal story between the place that shaped me and the place where I am growing.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Story</a><a href="roots.html">Places</a><a href="journey.html">Journey</a>
+      <a href="roots.html#photo-credits">Photo credits</a>
+    </div>
+    <div class="footer-note"><span class="footer-dot"></span> Built with memory, movement & curiosity.<small>© <span id="yearNow"></span> Two Worlds, One Journey</small></div>
+  </div>
+</footer>
+<div class="lightbox" id="photoLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+  <figure class="lightbox-figure"><img src="" alt="Enlarged photograph from the Two Worlds, One Journey photo atlas" id="lightboxImage"><figcaption id="lightboxCaption"></figcaption></figure>
+</div>
+<div class="sr-live" id="liveStatus" role="status" aria-live="polite"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/route.js"></script>
+<script src="js/atlas.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/form.js"></script>
+<script src="js/app.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/experience.js"></script>
+</body>
+</html>

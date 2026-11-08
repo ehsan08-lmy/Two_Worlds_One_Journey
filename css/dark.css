@@ -1,0 +1,47 @@
+/* ===== Night theme: same layout, new palette. Variables first, then the few hard-coded spots. ===== */
+.theme-toggle{display:grid;place-items:center;width:42px;height:42px;margin-left:8px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);transition:background .3s,transform .5s cubic-bezier(.3,1.6,.5,1),border-color .3s}
+.theme-toggle:hover{background:var(--sage);transform:rotate(25deg) scale(1.08)}
+.theme-toggle svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.theme-toggle .moon{opacity:0;transform:scale(.4) rotate(-80deg);transform-origin:center;fill:currentColor}
+.theme-toggle .sun-core{fill:currentColor;transition:transform .5s,opacity .4s;transform-origin:center}.theme-toggle .sun-rays{transform-origin:center;transition:transform .7s cubic-bezier(.3,1.4,.5,1),opacity .4s}
+.theme-toggle .moon{transition:opacity .4s,transform .6s cubic-bezier(.3,1.4,.5,1)}
+html[data-theme="dark"] .theme-toggle .moon{opacity:1;transform:none}
+html[data-theme="dark"] .theme-toggle .sun-core,html[data-theme="dark"] .theme-toggle .sun-rays{opacity:0;transform:scale(.3) rotate(90deg)}
+@media(max-width:991.98px){.theme-item{margin:6px 0 10px}.theme-toggle{margin-left:14px}}
+
+html[data-theme="dark"]{color-scheme:dark;--ink:#e8efe8;--ink-2:#cfdcd2;--sage:#1d3b34;--sage-2:#142a25;--cream:#0d1b18;--paper:#12241f;--clay:#e0987c;--clay-soft:#5c3b30;--gold:#e0c27a;--muted:#9fb3a8;--line:rgba(232,239,232,.16);--shadow:0 24px 70px rgba(0,0,0,.5);--deep:#08120f}
+html[data-theme="dark"] body{background:var(--cream);color:var(--ink)}
+html[data-theme="dark"] .site-header{background:rgba(13,27,24,.92);border-bottom-color:var(--line)}
+html[data-theme="dark"] .hero-section{background:linear-gradient(120deg,#0d1b18 0%,#10221e 100%)}
+html[data-theme="dark"] .hero-lede,html[data-theme="dark"] .hero-signature small{color:var(--muted)}
+html[data-theme="dark"] .blob{opacity:.18}
+html[data-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+html[data-theme="dark"] .navbar-collapse{background:transparent}
+/* buttons and chips that used "ink" as a dark fill */
+html[data-theme="dark"] .skip-link,html[data-theme="dark"] .button-dark,html[data-theme="dark"] .filter-chip.is-active,html[data-theme="dark"] .place-category,html[data-theme="dark"] .add-stop:hover,html[data-theme="dark"] .add-stop.is-added,html[data-theme="dark"] .move-stop:hover,html[data-theme="dark"] .world-card-info>a:hover,html[data-theme="dark"] .to-top{background:var(--clay);color:#0d1b18}
+html[data-theme="dark"] .button-dark:hover,html[data-theme="dark"] .to-top:hover{background:var(--gold);color:#0d1b18}
+html[data-theme="dark"] .button-light{background:var(--ink);color:#0d1b18}
+html[data-theme="dark"] .route-feature{background:var(--deep);color:var(--ink)}
+html[data-theme="dark"] .balance-kaz,html[data-theme="dark"] .pin--kaz{background:#8fc9b6}
+html[data-theme="dark"] .pin--kaz b{color:#08120f}
+/* surfaces that were hard-coded white/cream */
+html[data-theme="dark"] .search-wrap,html[data-theme="dark"] .sort-wrap select,html[data-theme="dark"] .field-group .form-control,html[data-theme="dark"] .field-group .form-select{background:var(--paper);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .field-group .form-control::placeholder,html[data-theme="dark"] .search-wrap input::placeholder{color:var(--muted)}
+html[data-theme="dark"] .search-wrap input{color:var(--ink);background:transparent}
+html[data-theme="dark"] .sort-wrap select option{background:var(--paper);color:var(--ink)}
+html[data-theme="dark"] .place-card,html[data-theme="dark"] .featured-card,html[data-theme="dark"] .world-card,html[data-theme="dark"] .itinerary-panel,html[data-theme="dark"] .form-card,html[data-theme="dark"] .world-balance{background:var(--paper)}
+html[data-theme="dark"] .place-credit,html[data-theme="dark"] .place-card-meta{border-color:var(--line)}
+html[data-theme="dark"] .route-count{background:var(--sage);color:var(--ink)}
+html[data-theme="dark"] .image-index,html[data-theme="dark"] .place-country-tag{background:var(--paper);color:var(--ink)}
+html[data-theme="dark"] .lightbox{background:rgba(5,12,10,.94)}
+html[data-theme="dark"] .route-map .leaflet-tile-pane{filter:invert(.92) hue-rotate(180deg) brightness(.85) contrast(.9) sepia(.25)}
+html[data-theme="dark"] .leaflet-popup-content-wrapper,html[data-theme="dark"] .leaflet-popup-tip{background:var(--paper);color:var(--ink)}
+html[data-theme="dark"] .leaflet-bar a{background:var(--paper);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] img{filter:brightness(.92)}
+html[data-theme="dark"] .pin img{filter:none}
+html[data-theme="dark"] ::selection{background:var(--clay-soft);color:var(--ink)}
+html[data-theme="dark"] .eyebrow-year{color:var(--muted)}
+html[data-theme="dark"] .hero-photo,html[data-theme="dark"] .collage-image,html[data-theme="dark"] .journey-hero-photo{border-color:rgba(232,239,232,.22)}
+html[data-theme="dark"] .route-point{fill:var(--clay)}
+html[data-theme="dark"] .itinerary-list li,html[data-theme="dark"] .faq-item{border-color:var(--line)}
+html[data-theme="dark"] .itinerary-summary{background:var(--sage-2)}

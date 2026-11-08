@@ -1,0 +1,98 @@
+/* ===== Endterm FX layer: playful motion, each part of the site gets its own animation ===== */
+@keyframes wordIn{from{opacity:0;transform:translateY(70%) rotate(5deg);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.12)}66%{transform:translate(-30px,25px) scale(.92)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinBack{to{transform:rotate(-360deg)}}
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(38px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(186,112,87,.45)}100%{box-shadow:0 0 0 16px rgba(186,112,87,0)}}
+@keyframes wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(7deg) scale(1.05)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes confetti{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot))}}
+@keyframes tick{from{stroke-dashoffset:30}to{stroke-dashoffset:0}}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes bump{0%{transform:scale(1)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:left;transform:scaleX(0);z-index:3000;background:linear-gradient(90deg,var(--clay),var(--gold),var(--ink));pointer-events:none}
+
+/* Hero: word-by-word headline, drifting colour blobs, cursor spotlight */
+.word{display:inline-block;opacity:0;animation:wordIn .85s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * 110ms + 150ms)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none;z-index:0;animation:drift 16s ease-in-out infinite}
+.blob--a{width:380px;height:380px;background:var(--clay-soft);left:-90px;top:20%}
+.blob--b{width:320px;height:320px;background:var(--gold);right:-60px;top:-60px;animation-delay:-5s;opacity:.3}
+.blob--c{width:300px;height:300px;background:var(--sage);right:25%;bottom:-100px;animation-delay:-9s}
+.spotlight{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(520px circle at var(--mx,70%) var(--my,30%),rgba(214,182,106,.22),transparent 60%)}
+.page-hero{position:relative;overflow-x:clip}
+.hero-photo,.collage-image,.journey-hero-photo{translate:calc(var(--px,0) * 16px) calc(var(--py,0) * 12px);transition:translate .35s ease-out}
+.orbit-two{animation:spinBack 70s linear infinite}
+.route-card-icon,.closing-star,.form-card-heading>span,.message-aside-symbol{display:inline-grid;animation:spin 14s linear infinite}
+.collage-sticker{animation:wobble 5s ease-in-out infinite}
+.journey-stamp{animation:bob 6s ease-in-out infinite}
+.quote-mark{display:inline-block;animation:bob 5s ease-in-out infinite}
+.itinerary-empty>span{display:inline-block;animation:spin 9s linear infinite}
+.brand-symbol{transition:transform .6s cubic-bezier(.3,1.6,.5,1)}.brand-lockup:hover .brand-symbol{transform:rotate(332deg) scale(1.12)}
+
+/* Ticker band between hero and content */
+
+/* Reveal: blur + lift, with variety by position */
+[data-reveal]{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1),filter .9s ease!important}
+[data-reveal]:not(.is-visible){filter:blur(8px)}
+.world-card-grid>[data-reveal]:nth-child(odd):not(.is-visible){transform:translateX(-50px) rotate(-1.5deg)}
+.world-card-grid>[data-reveal]:nth-child(even):not(.is-visible){transform:translateX(50px) rotate(1.5deg)}
+.timeline-item:not(.is-visible){transform:scale(.92) translateY(40px)}
+
+/* Cards: staggered entrance, 3D tilt, light that follows the pointer */
+.place-card,.featured-card,.world-card{position:relative;transform-style:preserve-3d;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out,box-shadow .35s ease;animation:cardIn .7s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--n,0) * 70ms)}
+.place-card:hover,.featured-card:hover,.world-card:hover{box-shadow:0 30px 70px rgba(23,49,43,.22)}
+.place-card:after,.featured-card:after,.world-card:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(280px circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.35),transparent 60%)}
+.place-card:hover:after,.featured-card:hover:after,.world-card:hover:after{opacity:1}
+.place-card img,.featured-card img{transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
+.place-card:hover img,.featured-card:hover img{transform:scale(1.1) rotate(.6deg);filter:saturate(1.15)}
+
+/* Buttons: light sweep, nudging arrows, press feedback */
+.button,.filter-chip,.add-stop{position:relative;overflow:hidden}
+.button:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-130%);pointer-events:none}
+.button:hover:before{transform:translateX(130%);transition:transform .75s}
+.button span{display:inline-block;transition:transform .3s}.button:hover span{transform:translate(4px,-4px)}
+.button:active,.add-stop:active,.filter-chip:active{transform:scale(.95)}
+.filter-chip.is-active{animation:pop .4s}
+.add-stop.is-added{animation:pop .45s}
+.route-count.bump{animation:bump .5s}
+.search-wrap:focus-within{box-shadow:0 0 0 4px rgba(186,112,87,.2);transition:box-shadow .3s}
+
+/* Timeline: line draws as you scroll, markers pulse */
+.story-timeline:before{transform-origin:top;transform:scaleY(var(--prog,1));transition:transform .2s linear}
+.timeline-marker{animation:ring 2.6s ease-out infinite}
+.timeline-photo{overflow:hidden}.timeline-photo img{transition:transform 1s}.timeline-item:hover .timeline-photo img{transform:scale(1.08)}
+
+/* Route builder and form */
+.balance-afg{background:linear-gradient(90deg,var(--clay),#d58f72,var(--clay));background-size:200% 100%;animation:shimmer 3s linear infinite}
+.itinerary-list li{animation:cardIn .45s backwards}
+.field-group .is-invalid,.field-group .form-control.is-invalid{animation:shake .45s}
+.form-success{border-left:4px solid var(--gold)}
+.form-success strong:before{content:"";display:inline-block;width:22px;height:22px;margin-right:10px;vertical-align:-5px;border-radius:50%;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9' stroke-dasharray='30'/%3E%3C/svg%3E") center/70% no-repeat;animation:pop .6s}
+
+/* Confetti, route traveller, back-to-top */
+.confetti{position:fixed;width:9px;height:14px;border-radius:2px;pointer-events:none;z-index:4000;animation:confetti .95s ease-out forwards}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:1500;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:20px;box-shadow:var(--shadow);opacity:0;transform:translateY(30px) scale(.6);pointer-events:none;transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1),background .2s}
+.to-top.is-shown{opacity:1;transform:none;pointer-events:auto;animation:bob 2.4s ease-in-out infinite}
+.to-top:hover{background:var(--clay)}
+
+@media(max-width:767.98px){.blob{opacity:.25}.place-card,.featured-card,.world-card{transform:none}}
+@media(prefers-reduced-motion:reduce){.word,.place-card,.featured-card,.world-card,.itinerary-list li{opacity:1;animation:none!important}[data-reveal]:not(.is-visible){filter:none}}
+
+/* ===== View Transitions (Chrome/Edge 126+, Safari 18.2+; other browsers simply skip them) ===== */
+@view-transition{navigation:auto}
+@keyframes vtOut{to{opacity:0;transform:translateY(-16px) scale(.99)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(24px)}}
+::view-transition-old(root){animation:vtOut .3s ease both}
+::view-transition-new(root){animation:vtIn .55s cubic-bezier(.2,.8,.2,1) both}
+.site-header{view-transition-name:site-header}
+::view-transition-group(*){animation-duration:.55s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+html.theme-anim::view-transition-old(root),html.theme-anim::view-transition-new(root){animation:none;mix-blend-mode:normal}
+html.theme-anim::view-transition-old(root){z-index:1}html.theme-anim::view-transition-new(root){z-index:2}
+html.theme-anim .site-header,html.theme-anim [style*="view-transition-name"]{view-transition-name:none!important}
+@media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
